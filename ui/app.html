@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html id='app' ng-app='WebApp' ng-controller='WebAppController' lang='en' ng-cloak>
+	<head>
+		<title>Emporium</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0'>
+		<link rel='stylesheet' type='text/css' href='/app.css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+	</head>
+	<body>
+		{{me.name || 'No Name'}}
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script src='app.js'></script>
+	</body>
+</html>
