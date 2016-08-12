@@ -1,0 +1,2 @@
+# standalone
+Standalone web application
