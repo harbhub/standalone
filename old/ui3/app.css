@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url(/gotham-bold.ttf) format('truetype');
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+	font-family: 'Gotham Bold';
+}
+button {
+	border: none;
+}
+html, body {
+	font-family: 'Gotham Bold';
+	font: 16px sans-serif;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row wrap;
+	background: white;
+}

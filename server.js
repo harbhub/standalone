@@ -1,24 +1,53 @@
 'use strict';
 
 var path = require( 'path' ),
+
 	fs = require( 'fs' ),
+
 	bcrypt = require( 'bcrypt' ),
+
 	app = require( 'express' )(),
+
+	// httpsConfig = {
+
+	// 	key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+
+ //  		cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
+
+	// },
+
+	// server = require( 'https' ).createServer( httpsConfig, app ),
+
 	server = require( 'http' ).createServer( app ),
+
 	io = require( 'socket.io' ).listen( server ),
+
 	redisClient = require( 'redis' ).createClient(),
+
 	expressSession = require( 'express-session' ),
+
 	RedisStore = require( 'connect-redis' )( expressSession ),
+
 	redisStore = new RedisStore( {
+
 		client: redisClient
+
 	} ),
+
 	session = expressSession( {
+
 		store: redisStore,
+
 		key: 'Secret Cookie String',
+
 		secret: 'Secret Session String',
+
 		resave: true,
+
 		saveUninitialized: true
+
 	} ),
+	
 	sharedSession = require( 'express-socket.io-session' );
 
 app.use( require( 'errorhandler' )() );
